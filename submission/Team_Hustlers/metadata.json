@@ -1,0 +1,6 @@
+{
+  "name": "VoxBrowser",
+  "description": "Professional voice recognition and real-time voice-to-text transcription browser application with low-latency spoken feedback and history tracking.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
