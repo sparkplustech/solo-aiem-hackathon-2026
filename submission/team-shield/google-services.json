@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "781879177122",
+    "project_id": "mental-45586",
+    "storage_bucket": "mental-45586.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781879177122:android:d3dbbe966fccebac34ccfb",
+        "android_client_info": {
+          "package_name": "com.mahiir17.mental"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAypfRibaI_CJWAdhmegL2ZV1gPbIMNlDI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

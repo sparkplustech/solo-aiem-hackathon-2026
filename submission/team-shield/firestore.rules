@@ -1,0 +1,53 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow authenticated users to read and write their own user documents
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Allow authenticated users to read counselor profiles
+    match /users/{userId} {
+      allow read: if request.auth != null && get(/databases/$(database)/documents/users/$(userId)).data.role == 'counselor';
+    }
+
+    // Appointments - students can read/write their own, counselors can read assigned ones
+    match /appointments/{appointmentId} {
+      allow read, write: if request.auth != null && 
+        (request.auth.uid == resource.data.studentId || 
+         request.auth.uid == resource.data.counselorId);
+      allow create: if request.auth != null;
+    }
+
+    // Mood entries - only the owner can read/write
+    match /moodEntries/{entryId} {
+      allow read, write: if request.auth != null && request.auth.uid == resource.data.userId;
+    }
+
+    // Crisis reports - allow creation by anyone authenticated, read by counselors
+    match /crisisReports/{reportId} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'counselor';
+    }
+
+    // Chat messages - between specific users
+    match /chats/{chatId}/messages/{messageId} {
+      allow read, write: if request.auth != null && 
+        (request.auth.uid == resource.data.senderId || 
+         request.auth.uid == resource.data.receiverId);
+    }
+
+    // Community groups - authenticated users can read
+    match /communityGroups/{groupId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'counselor';
+    }
+
+    // Default deny for any other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
