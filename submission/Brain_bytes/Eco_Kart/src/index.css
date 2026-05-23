@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-geist {
+    font-family: 'Geist', sans-serif;
+  }
+}
+
+body {
+  font-family: 'Geist', sans-serif;
+  background-color: #f8f9ff;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.glass-card:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+  transition: all 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom Tailwind Config-like definitions for design system variables */
+:root {
+  --primary: #006c49;
+  --primary-container: #10b981;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-primary-container {
+  background-color: var(--primary-container);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+

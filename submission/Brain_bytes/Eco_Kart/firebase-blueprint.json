@@ -1,0 +1,54 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User registration database and points ledger",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "password": { "type": "string" },
+        "role": { "type": "string" },
+        "greenPoints": { "type": "number" },
+        "carbonOffsetTons": { "type": "number" },
+        "status": { "type": "string" },
+        "joinedDate": { "type": "string" },
+        "recentActivity": { "type": "string" }
+      },
+      "required": ["name", "email", "password", "role"]
+    },
+    "Product": {
+      "title": "Commodity Product",
+      "description": "Eco products displayed in the marketplace",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "price": { "type": "number" },
+        "co2Offset": { "type": "number" },
+        "points": { "type": "number" },
+        "image": { "type": "string" },
+        "dataAlt": { "type": "string" },
+        "category": { "type": "string" },
+        "rating": { "type": "number" },
+        "description": { "type": "string" },
+        "status": { "type": "string" },
+        "sellerName": { "type": "string" },
+        "materialUsed": { "type": "string" },
+        "ecoScore": { "type": "number" }
+      },
+      "required": ["name", "price", "category", "description", "status"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User ledger profiles"
+    },
+    "products/{productId}": {
+      "schema": "Product",
+      "description": "Eco product collection"
+    }
+  }
+}

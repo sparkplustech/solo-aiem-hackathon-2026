@@ -1,0 +1,6 @@
+{
+  "name": "EcoKart AI",
+  "description": "Interactive AI-powered sustainability dashboard and eco-friendly marketplace with dynamic carbon offset tracking and gamified eco-badges.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
