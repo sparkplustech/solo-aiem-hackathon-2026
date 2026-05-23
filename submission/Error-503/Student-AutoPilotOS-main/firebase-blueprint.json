@@ -1,0 +1,128 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User statistics and academic profile",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "streak": { "type": "integer" },
+        "focusScore": { "type": "integer" },
+        "totalStudyHours": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "email"]
+    },
+    "Summary": {
+      "title": "Note Summary",
+      "description": "AI generated notes, summaries and formulas",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "title": { "type": "string" },
+        "summary": { "type": "string" },
+        "keyPoints": { "type": "array", "items": { "type": "string" } },
+        "examNotes": { "type": "string" },
+        "formulas": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "ownerId", "title", "summary"]
+    },
+    "Quiz": {
+      "title": "AI Quiz",
+      "description": "Generated quizzes and user scores",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "title": { "type": "string" },
+        "questions": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "score": { "type": "integer" },
+        "maxScore": { "type": "integer" },
+        "completed": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "ownerId", "title", "questions"]
+    },
+    "Planner": {
+      "title": "Study Plan",
+      "description": "AI generated study plan and timetable",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "subjects": { "type": "array", "items": { "type": "string" } },
+        "dailySchedule": { "type": "array", "items": { "type": "object" } },
+        "revisionPlan": { "type": "array", "items": { "type": "object" } },
+        "subjectPriorities": { "type": "array", "items": { "type": "object" } },
+        "weakSubjects": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "ownerId", "subjects", "dailySchedule"]
+    },
+    "Assignment": {
+      "title": "Assignment Tracker",
+      "description": "Pending and completed academic assignments",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "title": { "type": "string" },
+        "subject": { "type": "string" },
+        "deadline": { "type": "string" },
+        "progress": { "type": "integer" },
+        "priority": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "ownerId", "title", "subject", "deadline", "progress", "priority"]
+    },
+    "Analytics": {
+      "title": "Study Analytics",
+      "description": "User metrics track records over time",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "date": { "type": "string" },
+        "hoursStudied": { "type": "number" },
+        "focusScore": { "type": "integer" },
+        "quizPerformance": { "type": "integer" },
+        "completedAssignments": { "type": "integer" }
+      },
+      "required": ["id", "ownerId", "date", "hoursStudied"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "Information and metrics about each student"
+    },
+    "summaries/{summaryId}": {
+      "schema": "Summary",
+      "description": "AI generated study notes and summaries per note"
+    },
+    "quizzes/{quizId}": {
+      "schema": "Quiz",
+      "description": "AI generated multiple choice questions and review flashcards"
+    },
+    "planner/{plannerId}": {
+      "schema": "Planner",
+      "description": "AI generated day schedules and revision maps"
+    },
+    "assignments/{assignmentId}": {
+      "schema": "Assignment",
+      "description": "Assignments tracker with countdowns and details"
+    },
+    "analytics/{analyticsId}": {
+      "schema": "Analytics",
+      "description": "Daily study history logs of study metrics"
+    }
+  }
+}

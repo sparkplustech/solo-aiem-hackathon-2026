@@ -1,0 +1,6 @@
+{
+  "name": "AutoPilot OS",
+  "description": "AI-powered academic operating system for students that automates note summaries, study planning, interactive quizzes, assignments, and focus analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

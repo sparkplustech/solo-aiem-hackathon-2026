@@ -1,0 +1,128 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // 1. Global safety net default-deny catch-all rule
+    match /{document=**} {
+      allow read, write: if false;
+    }
+    
+    // 3. Global parameters and reusable primitives
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+    
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+    
+    // 2. Validation Blueprints & Entities Checks
+    
+    function isValidUser(data) {
+      return data.userId == request.auth.uid
+        && data.email is string
+        && data.displayName is string
+        && data.displayName.size() <= 200;
+    }
+    
+    function isValidSummary(data) {
+      return data.ownerId == request.auth.uid
+        && data.title is string
+        && data.title.size() <= 300
+        && data.summary is string;
+    }
+    
+    function isValidQuiz(data) {
+      return data.ownerId == request.auth.uid
+        && data.title is string
+        && data.questions is list;
+    }
+    
+    function isValidPlanner(data) {
+      return data.ownerId == request.auth.uid
+        && data.subjects is list
+        && data.dailySchedule is list;
+    }
+    
+    function isValidAssignment(data) {
+      return data.ownerId == request.auth.uid
+        && data.title is string
+        && data.title.size() <= 300
+        && data.subject is string
+        && data.progress is int
+        && data.progress >= 0 
+        && data.progress <= 100
+        && data.priority is string;
+    }
+
+    function isValidAnalytics(data) {
+      return data.ownerId == request.auth.uid
+        && data.date is string
+        && data.hoursStudied is number;
+    }
+
+    // --- match blocks for every collection ---
+
+    match /users/{userId} {
+      allow read: if isSignedIn();
+      allow create: if isOwner(userId) && isValidUser(request.resource.data);
+      allow update: if isOwner(userId) && isValidUser(request.resource.data)
+                    && request.resource.data.email == resource.data.email; // email is immutable
+      allow delete: if isOwner(userId);
+    }
+    
+    match /summaries/{summaryId} {
+      allow list: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow get: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow create: if isSignedIn() && isValidSummary(request.resource.data);
+      allow update: if isSignedIn() && resource.data.ownerId == request.auth.uid 
+                    && isValidSummary(request.resource.data)
+                    && request.resource.data.ownerId == resource.data.ownerId;
+      allow delete: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+    }
+    
+    match /quizzes/{quizId} {
+      allow list: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow get: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow create: if isSignedIn() && isValidQuiz(request.resource.data);
+      allow update: if isSignedIn() && resource.data.ownerId == request.auth.uid 
+                    && isValidQuiz(request.resource.data)
+                    && request.resource.data.ownerId == resource.data.ownerId;
+      allow delete: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+    }
+    
+    match /planner/{plannerId} {
+      allow list: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow get: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow create: if isSignedIn() && isValidPlanner(request.resource.data);
+      allow update: if isSignedIn() && resource.data.ownerId == request.auth.uid 
+                    && isValidPlanner(request.resource.data)
+                    && request.resource.data.ownerId == resource.data.ownerId;
+      allow delete: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+    }
+    
+    match /assignments/{assignmentId} {
+      allow list: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow get: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow create: if isSignedIn() && isValidAssignment(request.resource.data);
+      allow update: if isSignedIn() && resource.data.ownerId == request.auth.uid 
+                    && isValidAssignment(request.resource.data)
+                    && request.resource.data.ownerId == resource.data.ownerId;
+      allow delete: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+    }
+    
+    match /analytics/{analyticsId} {
+      allow list: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow get: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow create: if isSignedIn() && isValidAnalytics(request.resource.data);
+      allow update: if isSignedIn() && resource.data.ownerId == request.auth.uid 
+                    && isValidAnalytics(request.resource.data)
+                    && request.resource.data.ownerId == resource.data.ownerId;
+      allow delete: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+    }
+  }
+}
