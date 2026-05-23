@@ -1,0 +1,997 @@
+{
+  "homemaker": {
+    "count": 10763,
+    "amount_mean": 745.79,
+    "amount_std": 1794.28,
+    "amount_median": 420.8,
+    "amount_p95": 2127.25,
+    "amount_p99": 5148.71,
+    "fraud_rate": 0.057,
+    "feature_stats": {
+      "amount": {
+        "mean": 745.7938,
+        "std": 1794.2757
+      },
+      "latitude": {
+        "mean": 21.0167,
+        "std": 5.7441
+      },
+      "longitude": {
+        "mean": 77.5486,
+        "std": 3.9449
+      },
+      "account_age_days": {
+        "mean": 390.57,
+        "std": 213.0978
+      },
+      "txn_count_1h": {
+        "mean": 6.5485,
+        "std": 3.7525
+      },
+      "txn_count_6h": {
+        "mean": 9.1589,
+        "std": 6.1014
+      },
+      "txn_count_24h": {
+        "mean": 9.1589,
+        "std": 6.1014
+      },
+      "amount_sum_1h": {
+        "mean": 4811.715,
+        "std": 6182.8651
+      },
+      "amount_sum_6h": {
+        "mean": 6623.08,
+        "std": 7380.4119
+      },
+      "amount_sum_24h": {
+        "mean": 6623.08,
+        "std": 7380.4119
+      },
+      "amount_max_1h": {
+        "mean": 1988.9346,
+        "std": 3838.8207
+      },
+      "amount_avg_1h": {
+        "mean": 681.2911,
+        "std": 799.2226
+      },
+      "amount_vs_7d_avg": {
+        "mean": 1.7441,
+        "std": 5.8856
+      },
+      "amount_vs_30d_avg": {
+        "mean": 1.4495,
+        "std": 3.4089
+      },
+      "amount_zscore_7d": {
+        "mean": 962324.1157,
+        "std": 1301774621.539
+      },
+      "amount_zscore_peer_group": {
+        "mean": -0.0,
+        "std": 1.0
+      },
+      "hour_of_day": {
+        "mean": 12.4933,
+        "std": 5.4318
+      },
+      "is_night": {
+        "mean": 0.1422,
+        "std": 0.3492
+      },
+      "day_of_week": {
+        "mean": 2.9411,
+        "std": 1.9653
+      },
+      "is_weekend": {
+        "mean": 0.2677,
+        "std": 0.4428
+      },
+      "days_since_last_txn": {
+        "mean": 4.3129,
+        "std": 4.6891
+      },
+      "new_device_flag": {
+        "mean": 0.0634,
+        "std": 0.2436
+      },
+      "device_change_count_7d": {
+        "mean": 0.029,
+        "std": 0.1754
+      },
+      "hour_deviation_from_median": {
+        "mean": 4.3792,
+        "std": 3.1564
+      },
+      "is_new_beneficiary": {
+        "mean": 0.9776,
+        "std": 0.148
+      },
+      "beneficiary_age_days": {
+        "mean": 0.3606,
+        "std": 3.9309
+      },
+      "new_beneficiary_count_24h": {
+        "mean": 0.2034,
+        "std": 0.4474
+      },
+      "unique_beneficiary_count_7d": {
+        "mean": 1.3612,
+        "std": 1.1815
+      },
+      "beneficiary_txn_count": {
+        "mean": 0.0327,
+        "std": 0.2503
+      },
+      "is_new_account": {
+        "mean": 0.0374,
+        "std": 0.1896
+      },
+      "account_age_bucket": {
+        "mean": 4.1687,
+        "std": 1.1738
+      },
+      "is_festival_day": {
+        "mean": 0.0652,
+        "std": 0.2469
+      },
+      "is_salary_day": {
+        "mean": 0.2565,
+        "std": 0.4367
+      },
+      "festival_multiplier": {
+        "mean": 1.0006,
+        "std": 0.0022
+      },
+      "minutes_since_midnight": {
+        "mean": 779.4776,
+        "std": 325.9585
+      },
+      "hour_sin": {
+        "mean": -0.0555,
+        "std": 0.7547
+      },
+      "hour_cos": {
+        "mean": -0.2792,
+        "std": 0.5911
+      },
+      "mcc_mismatch_flag": {
+        "mean": 0.7704,
+        "std": 0.4206
+      },
+      "sender_unique_mcc_count": {
+        "mean": 8.5795,
+        "std": 1.1036
+      },
+      "sender_txn_rank": {
+        "mean": 9.1742,
+        "std": 6.105
+      },
+      "history_tier": {
+        "mean": 0.783,
+        "std": 0.5303
+      },
+      "history_confidence": {
+        "mean": 0.1835,
+        "std": 0.1221
+      },
+      "log_amount": {
+        "mean": 6.0665,
+        "std": 0.9591
+      },
+      "amount_is_round": {
+        "mean": 0.0001,
+        "std": 0.0096
+      },
+      "amount_is_large": {
+        "mean": 0.0036,
+        "std": 0.0601
+      },
+      "amount_percentile_cohort": {
+        "mean": 0.5,
+        "std": 0.2887
+      },
+      "location_change_flag": {
+        "mean": 0.0359,
+        "std": 0.186
+      }
+    }
+  },
+  "merchant": {
+    "count": 9172,
+    "amount_mean": 9782.91,
+    "amount_std": 22376.16,
+    "amount_median": 3098.22,
+    "amount_p95": 40072.53,
+    "amount_p99": 127257.65,
+    "fraud_rate": 0.0568,
+    "feature_stats": {
+      "amount": {
+        "mean": 9782.9138,
+        "std": 22376.1634
+      },
+      "latitude": {
+        "mean": 21.2645,
+        "std": 5.8748
+      },
+      "longitude": {
+        "mean": 77.6558,
+        "std": 3.6316
+      },
+      "account_age_days": {
+        "mean": 378.6786,
+        "std": 212.1821
+      },
+      "txn_count_1h": {
+        "mean": 6.6656,
+        "std": 3.8591
+      },
+      "txn_count_6h": {
+        "mean": 9.4152,
+        "std": 6.3444
+      },
+      "txn_count_24h": {
+        "mean": 9.4152,
+        "std": 6.3444
+      },
+      "amount_sum_1h": {
+        "mean": 62661.6906,
+        "std": 73486.972
+      },
+      "amount_sum_6h": {
+        "mean": 87109.3332,
+        "std": 96703.9908
+      },
+      "amount_sum_24h": {
+        "mean": 87109.3332,
+        "std": 96703.9908
+      },
+      "amount_max_1h": {
+        "mean": 33366.2934,
+        "std": 43161.6713
+      },
+      "amount_avg_1h": {
+        "mean": 8625.9947,
+        "std": 9365.6256
+      },
+      "amount_vs_7d_avg": {
+        "mean": 4.8681,
+        "std": 53.4035
+      },
+      "amount_vs_30d_avg": {
+        "mean": 2.4569,
+        "std": 10.113
+      },
+      "amount_zscore_7d": {
+        "mean": 363231342.7722,
+        "std": 17957159490.6176
+      },
+      "amount_zscore_peer_group": {
+        "mean": -0.0,
+        "std": 1.0
+      },
+      "hour_of_day": {
+        "mean": 12.4539,
+        "std": 5.2211
+      },
+      "is_night": {
+        "mean": 0.124,
+        "std": 0.3296
+      },
+      "day_of_week": {
+        "mean": 2.9869,
+        "std": 1.999
+      },
+      "is_weekend": {
+        "mean": 0.2857,
+        "std": 0.4517
+      },
+      "days_since_last_txn": {
+        "mean": 4.2604,
+        "std": 4.5898
+      },
+      "new_device_flag": {
+        "mean": 0.0572,
+        "std": 0.2323
+      },
+      "device_change_count_7d": {
+        "mean": 0.0363,
+        "std": 0.19
+      },
+      "hour_deviation_from_median": {
+        "mean": 4.1789,
+        "std": 3.0094
+      },
+      "is_new_beneficiary": {
+        "mean": 0.9793,
+        "std": 0.1424
+      },
+      "beneficiary_age_days": {
+        "mean": 0.3818,
+        "std": 4.1821
+      },
+      "new_beneficiary_count_24h": {
+        "mean": 0.2062,
+        "std": 0.4512
+      },
+      "unique_beneficiary_count_7d": {
+        "mean": 1.3787,
+        "std": 1.1964
+      },
+      "beneficiary_txn_count": {
+        "mean": 0.0297,
+        "std": 0.2358
+      },
+      "is_new_account": {
+        "mean": 0.0309,
+        "std": 0.1729
+      },
+      "account_age_bucket": {
+        "mean": 4.1573,
+        "std": 1.1444
+      },
+      "is_festival_day": {
+        "mean": 0.0566,
+        "std": 0.2311
+      },
+      "is_salary_day": {
+        "mean": 0.2571,
+        "std": 0.4371
+      },
+      "festival_multiplier": {
+        "mean": 1.0005,
+        "std": 0.0021
+      },
+      "minutes_since_midnight": {
+        "mean": 776.5224,
+        "std": 313.6804
+      },
+      "hour_sin": {
+        "mean": -0.047,
+        "std": 0.7576
+      },
+      "hour_cos": {
+        "mean": -0.3172,
+        "std": 0.5686
+      },
+      "mcc_mismatch_flag": {
+        "mean": 0.7701,
+        "std": 0.4208
+      },
+      "sender_unique_mcc_count": {
+        "mean": 8.5584,
+        "std": 1.1362
+      },
+      "sender_txn_rank": {
+        "mean": 9.429,
+        "std": 6.3465
+      },
+      "history_tier": {
+        "mean": 0.803,
+        "std": 0.5473
+      },
+      "history_confidence": {
+        "mean": 0.1886,
+        "std": 0.1269
+      },
+      "log_amount": {
+        "mean": 8.0501,
+        "std": 1.5077
+      },
+      "amount_is_round": {
+        "mean": 0.0047,
+        "std": 0.0683
+      },
+      "amount_is_large": {
+        "mean": 0.216,
+        "std": 0.4115
+      },
+      "amount_percentile_cohort": {
+        "mean": 0.5001,
+        "std": 0.2887
+      },
+      "location_change_flag": {
+        "mean": 0.0328,
+        "std": 0.1782
+      }
+    }
+  },
+  "salaried": {
+    "count": 16252,
+    "amount_mean": 3172.74,
+    "amount_std": 11207.01,
+    "amount_median": 1160.65,
+    "amount_p95": 9773.72,
+    "amount_p99": 29407.13,
+    "fraud_rate": 0.0634,
+    "feature_stats": {
+      "amount": {
+        "mean": 3172.7439,
+        "std": 11207.0126
+      },
+      "latitude": {
+        "mean": 21.2643,
+        "std": 5.9315
+      },
+      "longitude": {
+        "mean": 77.4895,
+        "std": 3.6099
+      },
+      "account_age_days": {
+        "mean": 364.4871,
+        "std": 213.7597
+      },
+      "txn_count_1h": {
+        "mean": 6.6188,
+        "std": 3.8227
+      },
+      "txn_count_6h": {
+        "mean": 9.2678,
+        "std": 6.2022
+      },
+      "txn_count_24h": {
+        "mean": 9.2678,
+        "std": 6.2022
+      },
+      "amount_sum_1h": {
+        "mean": 20609.5677,
+        "std": 47336.0171
+      },
+      "amount_sum_6h": {
+        "mean": 28339.336,
+        "std": 53875.8904
+      },
+      "amount_sum_24h": {
+        "mean": 28339.336,
+        "std": 53875.8904
+      },
+      "amount_max_1h": {
+        "mean": 9926.8763,
+        "std": 20024.9734
+      },
+      "amount_avg_1h": {
+        "mean": 2810.7295,
+        "std": 4906.0494
+      },
+      "amount_vs_7d_avg": {
+        "mean": 3.1139,
+        "std": 21.1016
+      },
+      "amount_vs_30d_avg": {
+        "mean": 1.8822,
+        "std": 5.9723
+      },
+      "amount_zscore_7d": {
+        "mean": 23014279.872,
+        "std": 6320439288.5725
+      },
+      "amount_zscore_peer_group": {
+        "mean": -0.0,
+        "std": 1.0
+      },
+      "hour_of_day": {
+        "mean": 12.45,
+        "std": 5.6484
+      },
+      "is_night": {
+        "mean": 0.1598,
+        "std": 0.3664
+      },
+      "day_of_week": {
+        "mean": 2.9615,
+        "std": 1.9804
+      },
+      "is_weekend": {
+        "mean": 0.2786,
+        "std": 0.4483
+      },
+      "days_since_last_txn": {
+        "mean": 4.269,
+        "std": 4.6515
+      },
+      "new_device_flag": {
+        "mean": 0.0622,
+        "std": 0.2415
+      },
+      "device_change_count_7d": {
+        "mean": 0.0406,
+        "std": 0.2044
+      },
+      "hour_deviation_from_median": {
+        "mean": 4.5331,
+        "std": 3.2829
+      },
+      "is_new_beneficiary": {
+        "mean": 0.9778,
+        "std": 0.1472
+      },
+      "beneficiary_age_days": {
+        "mean": 0.3322,
+        "std": 3.856
+      },
+      "new_beneficiary_count_24h": {
+        "mean": 0.2157,
+        "std": 0.4707
+      },
+      "unique_beneficiary_count_7d": {
+        "mean": 1.3855,
+        "std": 1.2115
+      },
+      "beneficiary_txn_count": {
+        "mean": 0.0345,
+        "std": 0.2657
+      },
+      "is_new_account": {
+        "mean": 0.0438,
+        "std": 0.2047
+      },
+      "account_age_bucket": {
+        "mean": 4.0605,
+        "std": 1.1862
+      },
+      "is_festival_day": {
+        "mean": 0.0655,
+        "std": 0.2474
+      },
+      "is_salary_day": {
+        "mean": 0.2496,
+        "std": 0.4328
+      },
+      "festival_multiplier": {
+        "mean": 1.0006,
+        "std": 0.0022
+      },
+      "minutes_since_midnight": {
+        "mean": 776.4319,
+        "std": 339.4244
+      },
+      "hour_sin": {
+        "mean": -0.0516,
+        "std": 0.7501
+      },
+      "hour_cos": {
+        "mean": -0.2416,
+        "std": 0.6135
+      },
+      "mcc_mismatch_flag": {
+        "mean": 0.7674,
+        "std": 0.4225
+      },
+      "sender_unique_mcc_count": {
+        "mean": 8.5529,
+        "std": 1.0926
+      },
+      "sender_txn_rank": {
+        "mean": 9.2845,
+        "std": 6.2072
+      },
+      "history_tier": {
+        "mean": 0.791,
+        "std": 0.5369
+      },
+      "history_confidence": {
+        "mean": 0.1857,
+        "std": 0.1241
+      },
+      "log_amount": {
+        "mean": 7.0805,
+        "std": 1.2754
+      },
+      "amount_is_round": {
+        "mean": 0.0011,
+        "std": 0.0333
+      },
+      "amount_is_large": {
+        "mean": 0.0484,
+        "std": 0.2145
+      },
+      "amount_percentile_cohort": {
+        "mean": 0.5,
+        "std": 0.2887
+      },
+      "location_change_flag": {
+        "mean": 0.0354,
+        "std": 0.1849
+      }
+    }
+  },
+  "student": {
+    "count": 11293,
+    "amount_mean": 574.67,
+    "amount_std": 2782.07,
+    "amount_median": 255.66,
+    "amount_p95": 1583.5,
+    "amount_p99": 4405.59,
+    "fraud_rate": 0.059,
+    "feature_stats": {
+      "amount": {
+        "mean": 574.6726,
+        "std": 2782.0707
+      },
+      "latitude": {
+        "mean": 20.8267,
+        "std": 5.7291
+      },
+      "longitude": {
+        "mean": 77.6112,
+        "std": 3.842
+      },
+      "account_age_days": {
+        "mean": 376.1736,
+        "std": 208.1894
+      },
+      "txn_count_1h": {
+        "mean": 6.6745,
+        "std": 3.8982
+      },
+      "txn_count_6h": {
+        "mean": 9.3298,
+        "std": 6.2829
+      },
+      "txn_count_24h": {
+        "mean": 9.3298,
+        "std": 6.2829
+      },
+      "amount_sum_1h": {
+        "mean": 4005.1735,
+        "std": 12796.7868
+      },
+      "amount_sum_6h": {
+        "mean": 5576.5631,
+        "std": 15658.8817
+      },
+      "amount_sum_24h": {
+        "mean": 5576.5631,
+        "std": 15658.8817
+      },
+      "amount_max_1h": {
+        "mean": 1807.9398,
+        "std": 7673.7307
+      },
+      "amount_avg_1h": {
+        "mean": 554.8658,
+        "std": 1667.2255
+      },
+      "amount_vs_7d_avg": {
+        "mean": 2.2009,
+        "std": 10.7589
+      },
+      "amount_vs_30d_avg": {
+        "mean": 1.6194,
+        "std": 6.9124
+      },
+      "amount_zscore_7d": {
+        "mean": -4733428.4359,
+        "std": 2304918696.9407
+      },
+      "amount_zscore_peer_group": {
+        "mean": 0.0,
+        "std": 1.0
+      },
+      "hour_of_day": {
+        "mean": 12.5545,
+        "std": 6.5243
+      },
+      "is_night": {
+        "mean": 0.2608,
+        "std": 0.4391
+      },
+      "day_of_week": {
+        "mean": 2.9572,
+        "std": 1.9813
+      },
+      "is_weekend": {
+        "mean": 0.2766,
+        "std": 0.4474
+      },
+      "days_since_last_txn": {
+        "mean": 4.2695,
+        "std": 4.673
+      },
+      "new_device_flag": {
+        "mean": 0.0628,
+        "std": 0.2426
+      },
+      "device_change_count_7d": {
+        "mean": 0.0351,
+        "std": 0.1878
+      },
+      "hour_deviation_from_median": {
+        "mean": 5.3096,
+        "std": 3.7376
+      },
+      "is_new_beneficiary": {
+        "mean": 0.9751,
+        "std": 0.1558
+      },
+      "beneficiary_age_days": {
+        "mean": 0.3555,
+        "std": 3.9694
+      },
+      "new_beneficiary_count_24h": {
+        "mean": 0.2139,
+        "std": 0.4623
+      },
+      "unique_beneficiary_count_7d": {
+        "mean": 1.375,
+        "std": 1.1854
+      },
+      "beneficiary_txn_count": {
+        "mean": 0.0394,
+        "std": 0.2875
+      },
+      "is_new_account": {
+        "mean": 0.0335,
+        "std": 0.1799
+      },
+      "account_age_bucket": {
+        "mean": 4.1328,
+        "std": 1.1391
+      },
+      "is_festival_day": {
+        "mean": 0.0684,
+        "std": 0.2525
+      },
+      "is_salary_day": {
+        "mean": 0.261,
+        "std": 0.4392
+      },
+      "festival_multiplier": {
+        "mean": 1.0006,
+        "std": 0.0023
+      },
+      "minutes_since_midnight": {
+        "mean": 782.889,
+        "std": 391.9121
+      },
+      "hour_sin": {
+        "mean": -0.0516,
+        "std": 0.7204
+      },
+      "hour_cos": {
+        "mean": -0.0709,
+        "std": 0.688
+      },
+      "mcc_mismatch_flag": {
+        "mean": 0.7718,
+        "std": 0.4197
+      },
+      "sender_unique_mcc_count": {
+        "mean": 8.5512,
+        "std": 1.1258
+      },
+      "sender_txn_rank": {
+        "mean": 9.349,
+        "std": 6.2888
+      },
+      "history_tier": {
+        "mean": 0.7967,
+        "std": 0.542
+      },
+      "history_confidence": {
+        "mean": 0.187,
+        "std": 0.1258
+      },
+      "log_amount": {
+        "mean": 5.5869,
+        "std": 1.0839
+      },
+      "amount_is_round": {
+        "mean": 0.0001,
+        "std": 0.0094
+      },
+      "amount_is_large": {
+        "mean": 0.0041,
+        "std": 0.0637
+      },
+      "amount_percentile_cohort": {
+        "mean": 0.5,
+        "std": 0.2887
+      },
+      "location_change_flag": {
+        "mean": 0.0307,
+        "std": 0.1726
+      }
+    }
+  },
+  "trader": {
+    "count": 8125,
+    "amount_mean": 30869.62,
+    "amount_std": 51427.84,
+    "amount_median": 8829.39,
+    "amount_p95": 195436.97,
+    "amount_p99": 200000.0,
+    "fraud_rate": 0.0645,
+    "feature_stats": {
+      "amount": {
+        "mean": 30869.6207,
+        "std": 51427.8404
+      },
+      "latitude": {
+        "mean": 21.3268,
+        "std": 5.9035
+      },
+      "longitude": {
+        "mean": 77.9786,
+        "std": 3.9769
+      },
+      "account_age_days": {
+        "mean": 370.4416,
+        "std": 209.8988
+      },
+      "txn_count_1h": {
+        "mean": 6.6806,
+        "std": 3.8159
+      },
+      "txn_count_6h": {
+        "mean": 9.3174,
+        "std": 6.1973
+      },
+      "txn_count_24h": {
+        "mean": 9.3174,
+        "std": 6.1973
+      },
+      "amount_sum_1h": {
+        "mean": 206859.1426,
+        "std": 193510.9623
+      },
+      "amount_sum_6h": {
+        "mean": 291462.0527,
+        "std": 263623.9625
+      },
+      "amount_sum_24h": {
+        "mean": 291462.0527,
+        "std": 263623.9625
+      },
+      "amount_max_1h": {
+        "mean": 100015.4002,
+        "std": 75657.4757
+      },
+      "amount_avg_1h": {
+        "mean": 29481.2391,
+        "std": 25848.0361
+      },
+      "amount_vs_7d_avg": {
+        "mean": 9.0392,
+        "std": 88.1246
+      },
+      "amount_vs_30d_avg": {
+        "mean": 3.6336,
+        "std": 51.413
+      },
+      "amount_zscore_7d": {
+        "mean": -561851970.2355,
+        "std": 41608907070.5475
+      },
+      "amount_zscore_peer_group": {
+        "mean": 0.0,
+        "std": 1.0
+      },
+      "hour_of_day": {
+        "mean": 12.5382,
+        "std": 5.8768
+      },
+      "is_night": {
+        "mean": 0.186,
+        "std": 0.3891
+      },
+      "day_of_week": {
+        "mean": 2.9972,
+        "std": 1.9887
+      },
+      "is_weekend": {
+        "mean": 0.2868,
+        "std": 0.4523
+      },
+      "days_since_last_txn": {
+        "mean": 4.2431,
+        "std": 4.585
+      },
+      "new_device_flag": {
+        "mean": 0.0817,
+        "std": 0.274
+      },
+      "device_change_count_7d": {
+        "mean": 0.0398,
+        "std": 0.1991
+      },
+      "hour_deviation_from_median": {
+        "mean": 4.7097,
+        "std": 3.4481
+      },
+      "is_new_beneficiary": {
+        "mean": 0.9777,
+        "std": 0.1476
+      },
+      "beneficiary_age_days": {
+        "mean": 0.2554,
+        "std": 3.2528
+      },
+      "new_beneficiary_count_24h": {
+        "mean": 0.2154,
+        "std": 0.4592
+      },
+      "unique_beneficiary_count_7d": {
+        "mean": 1.3652,
+        "std": 1.1721
+      },
+      "beneficiary_txn_count": {
+        "mean": 0.0383,
+        "std": 0.2921
+      },
+      "is_new_account": {
+        "mean": 0.0304,
+        "std": 0.1717
+      },
+      "account_age_bucket": {
+        "mean": 4.1097,
+        "std": 1.1233
+      },
+      "is_festival_day": {
+        "mean": 0.0668,
+        "std": 0.2497
+      },
+      "is_salary_day": {
+        "mean": 0.2606,
+        "std": 0.439
+      },
+      "festival_multiplier": {
+        "mean": 1.0006,
+        "std": 0.0022
+      },
+      "minutes_since_midnight": {
+        "mean": 781.8094,
+        "std": 353.1083
+      },
+      "hour_sin": {
+        "mean": -0.0623,
+        "std": 0.7388
+      },
+      "hour_cos": {
+        "mean": -0.2014,
+        "std": 0.6401
+      },
+      "mcc_mismatch_flag": {
+        "mean": 0.7705,
+        "std": 0.4206
+      },
+      "sender_unique_mcc_count": {
+        "mean": 8.6188,
+        "std": 1.1022
+      },
+      "sender_txn_rank": {
+        "mean": 9.3383,
+        "std": 6.1991
+      },
+      "history_tier": {
+        "mean": 0.7947,
+        "std": 0.5366
+      },
+      "history_confidence": {
+        "mean": 0.1868,
+        "std": 0.124
+      },
+      "log_amount": {
+        "mean": 9.0549,
+        "std": 1.7811
+      },
+      "amount_is_round": {
+        "mean": 0.0462,
+        "std": 0.2098
+      },
+      "amount_is_large": {
+        "mean": 0.4722,
+        "std": 0.4993
+      },
+      "amount_percentile_cohort": {
+        "mean": 0.5001,
+        "std": 0.2887
+      },
+      "location_change_flag": {
+        "mean": 0.038,
+        "std": 0.1913
+      }
+    }
+  }
+}

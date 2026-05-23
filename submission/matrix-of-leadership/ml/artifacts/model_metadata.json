@@ -1,0 +1,139 @@
+{
+  "model_type": "LightGBM (Cost-Sensitive GBDT)",
+  "dataset": "PaySim-inspired + UPI Feature Engineering",
+  "dataset_size": 55000,
+  "train_size": 44000,
+  "test_size": 11000,
+  "n_features": 24,
+  "feature_names": [
+    "amount",
+    "hour",
+    "is_night",
+    "day_of_week",
+    "is_weekend",
+    "new_device_flag",
+    "is_new_beneficiary",
+    "txn_count_1h",
+    "txn_count_24h",
+    "amount_avg_7d",
+    "amount_vs_7d_avg",
+    "beneficiary_age_days",
+    "account_age_days",
+    "is_merchant_vpa",
+    "graph_contagion_score",
+    "fan_in_count_1h",
+    "drain_ratio_24h",
+    "is_festival_day",
+    "is_salary_day",
+    "city_tier",
+    "amount_log",
+    "velocity_score",
+    "risk_combo",
+    "type_encoded"
+  ],
+  "class_balance": {
+    "legit": 50000,
+    "fraud": 5000
+  },
+  "fraud_rate": 0.0909,
+  "metrics": {
+    "auc_roc": 1.0,
+    "f1_score": 0.9995,
+    "precision": 0.999,
+    "recall": 1.0
+  },
+  "confusion_matrix": {
+    "tn": 9999,
+    "fp": 1,
+    "fn": 0,
+    "tp": 1000
+  },
+  "cost_analysis": {
+    "fn_cost_per_txn": 8000,
+    "fp_cost_per_txn": 50,
+    "total_fn_cost": 0,
+    "total_fp_cost": 50,
+    "total_error_cost": 50,
+    "savings_vs_no_model": 7999950,
+    "savings_per_10k_txns": 7272681
+  },
+  "feature_importance": [
+    {
+      "feature": "drain_ratio_24h",
+      "importance": 917
+    },
+    {
+      "feature": "graph_contagion_score",
+      "importance": 913
+    },
+    {
+      "feature": "fan_in_count_1h",
+      "importance": 680
+    },
+    {
+      "feature": "beneficiary_age_days",
+      "importance": 645
+    },
+    {
+      "feature": "txn_count_24h",
+      "importance": 612
+    },
+    {
+      "feature": "velocity_score",
+      "importance": 561
+    },
+    {
+      "feature": "account_age_days",
+      "importance": 494
+    },
+    {
+      "feature": "amount",
+      "importance": 376
+    },
+    {
+      "feature": "amount_vs_7d_avg",
+      "importance": 244
+    },
+    {
+      "feature": "txn_count_1h",
+      "importance": 169
+    },
+    {
+      "feature": "amount_log",
+      "importance": 125
+    },
+    {
+      "feature": "hour",
+      "importance": 118
+    },
+    {
+      "feature": "new_device_flag",
+      "importance": 83
+    },
+    {
+      "feature": "risk_combo",
+      "importance": 69
+    },
+    {
+      "feature": "amount_avg_7d",
+      "importance": 43
+    }
+  ],
+  "hyperparameters": {
+    "objective": "binary",
+    "metric": "auc",
+    "boosting_type": "gbdt",
+    "n_estimators": 500,
+    "learning_rate": 0.05,
+    "max_depth": 7,
+    "num_leaves": 63,
+    "min_child_samples": 20,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "random_state": 42,
+    "verbose": -1
+  },
+  "trained_at": "2026-05-22T15:24:19.038973"
+}
