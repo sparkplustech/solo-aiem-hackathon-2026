@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --card-bg: rgba(255,255,255,0.9);
+  --card-border: rgba(0,145,185,0.12);
+  --selection-bg: rgba(0, 145, 185, 0.3);
+}
+
+/* Dark theme variables when .dark is present on html */
+.dark {
+  --bg: #071022;
+  --text: #e6eef6;
+  --muted: #94a3b8;
+  --card-bg: rgba(10,15,25,0.6);
+  --card-border: rgba(255,255,255,0.06);
+  --selection-bg: rgba(0,145,185,0.22);
+}
+
+/* Balanced dark-mode approach with proper contrast */
+.dark {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Landing page specific dark mode adjustments */
+.dark .landing-root {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Dashboard dark mode adjustments */
+.dark .admin-root,
+.dark .dashboard-root,
+.dark .official-root {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Dark-mode utility overrides for better readability */
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-slate-700,
+.dark .text-gray-900,
+.dark .text-gray-800,
+.dark .text-gray-700 {
+  color: #e2e8f0 !important;
+}
+
+.dark .text-slate-600,
+.dark .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-slate-500,
+.dark .text-gray-500,
+.dark .text-slate-400,
+.dark .text-gray-400 {
+  color: #94a3b8 !important;
+}
+
+/* Background overrides for better dark mode contrast */
+.dark .bg-white,
+.dark .bg-white\/80,
+.dark .bg-white\/50,
+.dark .bg-white\/30,
+.dark .bg-white\/90 {
+  background-color: rgba(30, 41, 59, 0.8) !important;
+  color: #e2e8f0 !important;
+}
+
+.dark .bg-gray-50,
+.dark .bg-gray-100,
+.dark .bg-slate-50 {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+}
+
+/* Border and input adjustments for dark mode */
+.dark .border-gray-200,
+.dark .border-gray-100,
+.dark .border-slate-200 {
+  border-color: #475569 !important;
+}
+
+.dark .auth-input-field {
+  background: #1e293b !important;
+  border-color: #475569 !important;
+  color: #e2e8f0 !important;
+}
+
+.dark .hover\:bg-white:hover,
+.dark .hover\:bg-gray-50:hover {
+  background-color: #334155 !important;
+}
+
+/* Login form specific dark mode fixes */
+.dark input[type="email"],
+.dark input[type="password"],
+.dark input {
+  background: #1e293b !important;
+  border-color: #475569 !important;
+  color: #e2e8f0 !important;
+}
+
+.dark input::placeholder {
+  color: #94a3b8 !important;
+}
+
+.dark label {
+  color: #cbd5e1 !important;
+}
+
+/* Chatbot specific styles to ensure readability and glassy footer */
+.chat-window {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+}
+
+.chat-body {
+  background: transparent;
+  color: var(--text);
+}
+
+.assistant-bubble {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+}
+
+.chat-footer {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--card-border);
+}
+
+.chat-input {
+  background: rgba(255,255,255,0.02);
+  color: var(--text);
+  border-color: var(--card-border) !important;
+}
+
+.text-muted { color: var(--muted); }
+
+.accent-text {
+  @apply text-slate-600;
+}
+
+body {
+  font-family:
+    "Inter Variable",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+/* Prevent horizontal scroll on mobile */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Prevent text from overflowing */
+h1, h2, h3, h4, h5, h6, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Glass morphism effect */
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  @apply backdrop-blur-xl rounded-xl shadow-xl;
+}
+
+/* Enhanced glass effect with better shadows */
+.glass-card:hover {
+  @apply shadow-2xl border-civic-teal/40;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--selection-bg);
+  color: white;
+}
+
+/* only use this to update the style of the auth input fields. use a different class for all other input fields */
+.auth-input-field {
+  @apply w-full px-4 py-3 rounded-container bg-white border border-gray-200 focus:border-civic-teal focus:ring-1 focus:ring-civic-teal outline-none transition-shadow shadow-sm hover:shadow;
+}
+
+/* only use this to update the style of the auth buttons. use the button class for all other buttons */
+.auth-button {
+  @apply w-full px-4 py-3 rounded bg-primary text-white font-semibold hover:bg-primary-hover transition-colors shadow-sm hover:shadow disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse glow effect */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 145, 185, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 145, 185, 0.6);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Custom map control button styling */
+.custom-map-control-button:hover {
+  background-color: #f5f5f5 !important;
+}

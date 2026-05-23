@@ -1,0 +1,80 @@
+import { motion } from "framer-motion";
+import { ReactElement } from "react";
+
+interface StatsCardProps {
+  title: string;
+  value: string | number;
+  change: string;
+  icon: ReactElement;
+  color: "blue" | "green" | "yellow" | "purple" | "red";
+}
+
+export function StatsCard({ title, value, change, icon, color }: StatsCardProps) {
+  const colorClasses = {
+    blue: "from-violet-500/12 to-cyan-400/12 border-violet-300/40 text-violet-600",
+    green: "from-green-500/20 to-green-600/20 border-green-500/30 text-green-600",
+    yellow: "from-amber-400/20 to-orange-400/20 border-amber-300/50 text-orange-500",
+    purple: "from-fuchsia-500/15 to-violet-500/15 border-fuchsia-300/40 text-fuchsia-600",
+    red: "from-orange-400/20 to-rose-500/20 border-orange-300/50 text-rose-600",
+  };
+
+  const isPositive = change.startsWith("+");
+
+  return (
+    <motion.div
+      className={`glass-card p-3 sm:p-4 md:p-6 bg-gradient-to-br ${colorClasses[color]} relative overflow-hidden group cursor-pointer`}
+      whileHover={{ 
+        scale: 1.05, 
+        boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+        rotateY: 5
+      }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    >
+      {/* Animated Background */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 opacity-0 group-hover:opacity-100"
+        transition={{ duration: 0.3 }}
+      />
+      
+      <div className="relative z-10">
+        <div className="flex items-center justify-between mb-2 sm:mb-3 md:mb-4">
+          <motion.div
+            className={colorClasses[color].split(' ').find(c => c.startsWith('text-')) || 'text-civic-teal'}
+            whileHover={{ rotate: 360, scale: 1.2 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 flex items-center justify-center">
+              {icon}
+            </div>
+          </motion.div>
+          <motion.div
+            className={`text-xs sm:text-sm font-medium px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full ${
+              isPositive ? "bg-green-500/20 text-green-600" : "bg-red-500/20 text-red-600"
+            }`}
+            whileHover={{ scale: 1.1 }}
+          >
+            {change}
+          </motion.div>
+        </div>
+        <div className="space-y-0.5 sm:space-y-1">
+          <p className="text-slate-600 text-xs sm:text-sm font-medium group-hover:text-slate-900 transition-colors">
+            {title}
+          </p>
+          <motion.p
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900"
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            {value}
+          </motion.p>
+        </div>
+      </div>
+      
+      {/* Hover Effect Line */}
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+      />
+    </motion.div>
+  );
+}
